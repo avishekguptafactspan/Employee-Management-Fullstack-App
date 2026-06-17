@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        AWS_REGION = 'us-east-1'
+        AWS_REGION = 'us-east-4'
         ECR_REGISTRY = credentials('ecr-registry-url')
         EKS_CLUSTER_NAME = 'employee-management-eks'
         DOCKER_BUILDKIT = '1'
