@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: employee-management-backend:sha-e212b65
+          image: employee-management-backend:sha-72a2e2a
           ports:
             - containerPort: 3000
           env:
