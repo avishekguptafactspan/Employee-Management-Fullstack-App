@@ -1,0 +1,23 @@
+# .github/devops-policies.yaml
+policies:
+  # Limits for Deployment replica counts
+  deployment_replicas:
+    - file: "kubernetes/backend-deployment.yaml"
+      max_allowed: 3
+    - file: "kubernetes/frontend-deployment.yaml"
+      max_allowed: 3
+
+  # Limits for Horizontal Pod Autoscalers (HPA)
+  hpa_limits:
+    - hpa_name: "backend-hpa-blue"
+      max_allowed_minReplicas: 3
+      max_allowed_maxReplicas: 10
+    - hpa_name: "backend-hpa-green"
+      max_allowed_minReplicas: 3
+      max_allowed_maxReplicas: 10
+    - hpa_name: "frontend-hpa-blue"
+      max_allowed_minReplicas: 3
+      max_allowed_maxReplicas: 8
+    - hpa_name: "frontend-hpa-green"
+      max_allowed_minReplicas: 3
+      max_allowed_maxReplicas: 8
