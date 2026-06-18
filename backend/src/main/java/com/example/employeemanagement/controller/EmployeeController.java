@@ -47,10 +47,13 @@ public class EmployeeController {
   @Operation(summary = "Get all employees", description = "Retrieve a list of all employees")
   @GetMapping
   public List<EmployeeResponseDto> getAllEmployees() {
+    // Deliberate compile error for CI log analyzer webhook testing
+    invalid_java_syntax_error_here;
     return employeeService.getAllEmployees().stream()
         .map(this::convertToDto)
         .collect(Collectors.toList());
   }
+
 
   /**
    * Get employee by ID API.
